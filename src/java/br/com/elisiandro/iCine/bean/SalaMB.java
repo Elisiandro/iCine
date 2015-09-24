@@ -1,5 +1,9 @@
 package br.com.elisiandro.iCine.bean;
 
+import br.com.elisiandro.iCine.entidade.Filme;
+import br.com.elisiandro.iCine.entidade.Sala;
+import java.util.ArrayList;
+import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
@@ -7,63 +11,58 @@ import javax.faces.bean.RequestScoped;
  *
  * @author Elisiandro
  */
-@ManagedBean(name="salaMB")
+@ManagedBean(name = "salaMB")
 @RequestScoped
 public class SalaMB {
 
-    private int sala;
-    private int quantidadeAssentos;
-    
+    private Sala sala;
+    private List<Sala> salas;
+
     public SalaMB() {
+        inicializacao();
     }
 
-    public SalaMB(int sala, int quantidadeAssentos) {
+    public SalaMB(Sala sala, List<Sala> salas) {
         this.sala = sala;
-        this.quantidadeAssentos = quantidadeAssentos;
+        this.salas = salas;
+
+        inicializacao();
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 79 * hash + this.sala;
-        hash = 79 * hash + this.quantidadeAssentos;
-        return hash;
-    }
+    public void inicializacao() {
+        sala = new Sala();
+        salas = new ArrayList<>();
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
+        if (this.salas.size() == 0) {
+            salas = new ArrayList<>();
+            Sala salaAux;
+            for (int i = 0; i < 10; i++) {
+                salaAux = new Sala(i, 10);
+                salas.add(salaAux);
+            }
         }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final SalaMB other = (SalaMB) obj;
-        if (this.sala != other.sala) {
-            return false;
-        }
-        return true;
     }
 
-    @Override
-    public String toString() {
-        return "SalaMB{" + "sala=" + sala + ", quantidadeAssentos=" + quantidadeAssentos + '}';
-    }
-
-    public int getSala() {
+    public Sala getSala() {
         return sala;
     }
 
-    public void setSala(int sala) {
+    public void setSala(Sala sala) {
         this.sala = sala;
     }
 
-    public int getQuantidadeAssentos() {
-        return quantidadeAssentos;
+    public List<Sala> getSalas() {
+        return salas;
     }
 
-    public void setQuantidadeAssentos(int quantidadeAssentos) {
-        this.quantidadeAssentos = quantidadeAssentos;
+    public void setSalas(List<Sala> salas) {
+        this.salas = salas;
+    }
+
+     public void adicionar() 
+    {
+        this.salas.add(this.sala);
+        this.sala = new Sala();
     }
     
 }
