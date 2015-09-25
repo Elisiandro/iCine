@@ -6,29 +6,77 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Login</title>
+
+            <link href="resources/css/bootstrap.css" rel="stylesheet" />
+        
+        <style>
+            body {
+                padding-top: 40px;
+                padding-bottom: 40px;
+                background-color: #eee;
+            }
+
+            .form-signin {
+                max-width: 330px;
+                padding: 15px;
+                margin: 0 auto;
+            }
+            .form-signin .form-signin-heading,
+            .form-signin .checkbox {
+                margin-bottom: 10px;
+            }
+            .form-signin .checkbox {
+                font-weight: normal;
+            }
+            .form-signin .form-control {
+                position: relative;
+                height: auto;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                padding: 10px;
+                font-size: 16px;
+            }
+            .form-signin .form-control:focus {
+                z-index: 2;
+            }
+            .form-signin input[type="email"] {
+                margin-bottom: -1px;
+                border-bottom-right-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+            .form-signin input[type="password"] {
+                margin-bottom: 10px;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+            }
+        </style>
+
     </h:head>
-    <h:body>
-        
+    <h:body class="container">
+         
         <p:growl id="growl" sticky="true" showDetail="true"/>
+
         
-        <h:form>
+        
+        <h:form class="form-signin">
             <!--style="position: absolute; top: 250px; left: 500px;" -->
             <p:panelGrid columns="2" >
                 <f:facet name="header" >Login Form</f:facet>
-                
+
                 <h:outputText value="Usuário:"/>
                 <h:inputText value="#{loginMB.usuario.user}"/>
                 <h:outputText value="Senha:"/>
                 <h:inputText value="#{loginMB.usuario.pass}"/>
-                
+
                 <f:facet name="footer" >
                     <h:commandButton value="Login" action="#{loginMB.autenticacao()}" />
-                    
+
                 </f:facet>
-                
+
             </p:panelGrid>
         </h:form>
-            
+
     </h:body>
 </html>
 
