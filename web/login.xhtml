@@ -7,8 +7,6 @@
     <h:head>
         <title>Login</title>
 
-            <link href="resources/css/bootstrap.css" rel="stylesheet" />
-        
         <style>
             body {
                 padding-top: 40px;
@@ -65,9 +63,9 @@
                 <f:facet name="header" >Login Form</f:facet>
 
                 <h:outputText value="Usuário:"/>
-                <h:inputText value="#{loginMB.usuario.user}"/>
+                <h:inputText value="#{loginMB.usuarioSelecionado.user}"/>
                 <h:outputText value="Senha:"/>
-                <h:inputText value="#{loginMB.usuario.pass}"/>
+                <h:inputText value="#{loginMB.usuarioSelecionado.pass}"/>
 
                 <f:facet name="footer" >
                     <h:commandButton value="Login" action="#{loginMB.autenticacao()}" />

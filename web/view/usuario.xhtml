@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./masterTemplate.xhtml">
+
+            <ui:define name="content">
+
+                <p:panelGrid columns="2" style="horizontal-align:center">
+                
+                    <h:outputLabel for="idNome" value="Nome:"/>
+                    <h:inputText id="idNome" value="#{usuarioMB.usuario.name}"  />
+
+                    <h:outputLabel for="idTelefone" value="Telefone:"/>
+                    <h:inputText id="idTelefone" value="#{usuarioMB.usuario.telefone}" />
+
+                    <h:outputLabel for="idEmail" value="Email:"/>
+                    <h:inputText id="idEmail" value="#{usuarioMB.usuario.email}" />
+
+                    <h:outputLabel for="idSexo" value="Sexo:" />
+                    <h:selectOneRadio id="idSexo" value="#{usuarioMB.usuario.sexo}">
+                        <f:selectItem itemLabel="Masculino" itemValue="1" />
+                        <f:selectItem itemLabel="Feminino" itemValue="2" />
+                    </h:selectOneRadio>
+
+                    <h:outputLabel value="Data Nascimento:" />
+                    <p:calendar value="#{usuarioMB.usuario.dataNascimento}" locale="pt_BR" id="dataNascimento" showButtonPanel="true">
+                        <f:convertDateTime pattern="dd/MM/yyyy" />
+                    </p:calendar>
+
+                    <h:outputLabel for="idEstado" value="Estado:" />
+                    <h:selectOneMenu id="idEstado" value="#{usuarioMB.usuario.estado}">
+                        <f:selectItem itemLabel="Rio Grande do Sul" itemValue="RS" />
+                        <f:selectItem itemLabel="Santa Catarina" itemValue="SC" />
+                        <f:selectItem itemLabel="Paraná" itemValue="PR" />
+                        <f:selectItem itemLabel="São Paulo" itemValue="SP" />
+                        <f:selectItem itemLabel="Rio de Janeiro" itemValue="RJ" />
+                    </h:selectOneMenu>
+
+                    <h:outputLabel for="idLogin" value="Login:"/>
+                    <h:inputText id="idLogin" value="#{usuarioMB.usuario.user}" />
+
+                    <h:outputLabel for="idSenha" value="Senha"/>
+                    <h:inputSecret id="idSenha" value="#{usuarioMB.usuario.pass}" />
+
+                    <h:outputLabel for="idAdmin" value="É admin"/>
+                    <h:selectBooleanCheckbox value="#{usuarioMB.usuario.admin}" />
+
+                </p:panelGrid>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

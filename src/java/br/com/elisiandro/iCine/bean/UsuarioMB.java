@@ -28,10 +28,10 @@ public class UsuarioMB {
     public UsuarioMB() {
          listaUsuarios = new ArrayList<Usuario>();
         
-         listaUsuarios.add(new Usuario("admin","admin","Administrador", new Date(), false));
-         listaUsuarios.add(new Usuario("rodrigo","123","Rodrigo da Silva", new Date(), false));
-         listaUsuarios.add(new Usuario("marcia","321","Marcia de Souza", new Date(), false));
-         listaUsuarios.add(new Usuario("jose","111","Jose Duarte", new Date(), false));
+         //listaUsuarios.add(new Usuario("admin","admin","Administrador", new Date(), false));
+         //listaUsuarios.add(new Usuario("rodrigo","123","Rodrigo da Silva", new Date(), false));
+         //listaUsuarios.add(new Usuario("marcia","321","Marcia de Souza", new Date(), false));
+         //listaUsuarios.add(new Usuario("jose","111","Jose Duarte", new Date(), false));
          
          usuario = new Usuario();
     }

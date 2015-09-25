@@ -8,9 +8,16 @@
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         
-        <h:outputStylesheet name="./css/default.css"/>
+        <!--<h:outputStylesheet name="./css/default.css"/>
         <h:outputStylesheet name="./css/cssLayout.css"/>
-        <h:outputStylesheet name="./css/bootstrap.css"/>
+        <h:outputStylesheet name="./css/bootstrap.css"/>-->
+        
+        <!--<link type="text/css" rel="stylesheet" href="./css/theme1/jquery-ui.css" />        
+        <h:outputStylesheet name="./css/theme1/jquery-ui.css"/>-->
+        
+        
+        <!--<link href="../resources/theme1/jquery-ui.css" rel="stylesheet" type="text/css"/>-->
+        
         
         <title>Facelets Template</title>
     </h:head>
@@ -27,8 +34,17 @@
                 <p:menuitem value="Seção" outcome="secao"></p:menuitem>
                 <p:menuitem value="Vendas" outcome="venda"></p:menuitem>
                 <p:menuitem value="Relatórios" outcome="relatorio"></p:menuitem>                
-                <p:menuitem value="Teste" outcome="teste"></p:menuitem>
+                <p:menuitem value="aa" outcome="usuario"></p:menuitem>                
+                
+                
+                
+                
             </p:menubar>
+            
+            <!--<h:commandButton value="Login" action="#{loginMB.autenticacao()}" />-->
+            
+            <h:commandButton value="Login" action="#{menuMB.troca()}" />
+            
             
             <ui:insert name="top">
                 <!--<nav class="navbar navbar-inverse navbar-fixed-top">                    

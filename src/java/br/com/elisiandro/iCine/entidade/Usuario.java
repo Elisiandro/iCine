@@ -8,49 +8,41 @@ import java.util.Objects;
  * @author Elisiandro
  */
 public class Usuario {
+    public final static int MASCULINO = 1;
+    public final static int FEMININO = 2;
+    
     private String user;
     private String pass;
     
     private String name;
+    private String email;
     private Date dataNascimento;
-    private boolean logado;
+    private String telefone;
+    private int sexo;
+    private String estado;
+    private boolean admin;
 
-    public Usuario() {
-    }
-
-    public Usuario(String user, String pass, String name, Date dataNascimento, boolean logado) {
+    public Usuario(String user, String pass, String name, String email, Date dataNascimento, String telefone, int sexo, String estado, boolean admin) {
         this.user = user;
         this.pass = pass;
         this.name = name;
+        this.email = email;
         this.dataNascimento = dataNascimento;
-        this.logado = logado;
+        this.telefone = telefone;
+        this.sexo = sexo;
+        this.estado = estado;
+        this.admin = admin;
+    }
+    
+    public Usuario() {
     }
 
-    @Override
-    public String toString() {
-        return "Usuario{" + "user=" + user + ", password=" + pass + ", name=" + name + ", dataNascimento=" + dataNascimento + ", logado=" + logado + '}';
+    public String getEmail() {
+        return email;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 41 * hash + Objects.hashCode(this.user);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Usuario other = (Usuario) obj;
-        if (!Objects.equals(this.user, other.user)) {
-            return false;
-        }
-        return true;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getUser() {
@@ -85,13 +77,41 @@ public class Usuario {
         this.dataNascimento = dataNascimento;
     }
 
-    public boolean isLogado() {
-        return logado;
+    public String getTelefone() {
+        return telefone;
     }
 
-    public void setLogado(boolean logado) {
-        this.logado = logado;
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
+    public int getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(int sexo) {
+        this.sexo = sexo;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
+    }
     
+    public String getAdminString(){
+        if(admin) return "SIM";
+        else return "NAO";
+    }
+
 }
