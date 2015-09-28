@@ -3,67 +3,49 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" id="bodyMasterTemplate3">
 
-    <h:head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        
-        <!--<h:outputStylesheet name="./css/default.css"/>
-        <h:outputStylesheet name="./css/cssLayout.css"/>
-        <h:outputStylesheet name="./css/bootstrap.css"/>-->
-        
-        <!--<link type="text/css" rel="stylesheet" href="./css/theme1/jquery-ui.css" />        
-        <h:outputStylesheet name="./css/theme1/jquery-ui.css"/>-->
-        
-        
-        <!--<link href="../resources/theme1/jquery-ui.css" rel="stylesheet" type="text/css"/>-->
-        
+    <h:head id="bodyMasterTemplate2">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />                
+        <link href="../resources/css/theme/primefaces-#{themeMB.layout}/theme.css" rel="stylesheet" type="text/css"/>
         
         <title>Facelets Template</title>
     </h:head>
 
-    <h:body>
-
+    <h:body id="bodyMasterTemplate">
         <div id="top">            
             <h:graphicImage value="/resources/images/Logo_Icine2.png" />            
-            <hr />     
+            <hr />
             <p:menubar>
-                <p:menuitem value="Home" outcome="home"></p:menuitem>                
+                <p:menuitem value="Home" outcome="home"></p:menuitem>
                 <p:menuitem value="Filmes" outcome="filmeList"></p:menuitem>
                 <p:menuitem value="Salas" outcome="salaList"></p:menuitem>
-                <p:menuitem value="Seção" outcome="secao"></p:menuitem>
+                <p:menuitem value="Seções" outcome="secao"></p:menuitem>
                 <p:menuitem value="Vendas" outcome="venda"></p:menuitem>
                 <p:menuitem value="Relatórios" outcome="relatorio"></p:menuitem>                
-                <p:menuitem value="aa" outcome="usuario"></p:menuitem>                
-                
-                
-                
-                
-            </p:menubar>
-            
-            <!--<h:commandButton value="Login" action="#{loginMB.autenticacao()}" />-->
-            
-            <h:commandButton value="Login" action="#{menuMB.troca()}" />
-            
-            
-            <ui:insert name="top">
-                <!--<nav class="navbar navbar-inverse navbar-fixed-top">                    
-                </nav>-->
-            </ui:insert>
-            
-        </div>
-        <div>
-            <div id="left">
-                <ui:insert name="left">Left</ui:insert>
-            </div>
-            <div id="content" class="left_content">
-                <ui:insert name="content">Content</ui:insert>
-            </div>
-        </div>
-        <div id="bottom">
-            <ui:insert name="bottom">Bottom</ui:insert>
-        </div>
+                <p:menuitem value="Usuários" outcome="usuario"></p:menuitem>
+                <p:menuitem value="Temas" outcome="theme"></p:menuitem>
+        </p:menubar>
 
-    </h:body>
+        <ui:insert name="top">
+            <!--<nav class="navbar navbar-inverse navbar-fixed-top">                    
+            </nav>-->
+        </ui:insert>
+
+    </div>
+    <div>
+        <div id="left"  >
+            <ui:insert name="left">Left</ui:insert>
+        </div>
+        <div id="content" class="left_content" >
+            <ui:insert name="content">Content</ui:insert>
+        </div>
+    </div>
+    <div id="bottom">
+        <ui:insert name="bottom">Bottom</ui:insert>
+    </div>
+
+</h:body>
 
 </html>
